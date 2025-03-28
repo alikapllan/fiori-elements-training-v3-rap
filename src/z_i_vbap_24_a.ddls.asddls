@@ -7,6 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #BASIC
 define view entity Z_I_VBAP_24_A
   as select from zvbap_24
   association [1..1] to Z_I_VBAK_24_A as _SD_Head on $projection.SalesDocument = _SD_Head.SalesDocument

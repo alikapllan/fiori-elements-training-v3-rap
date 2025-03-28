@@ -1,6 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Projection View - ZVBAK_24'
 @Metadata.ignorePropagatedAnnotations: true
+@VDM.viewType: #CONSUMPTION
 define root view entity Z_C_VBAK_24_C 
     provider contract transactional_query
     as projection on Z_I_VBAK_24_B

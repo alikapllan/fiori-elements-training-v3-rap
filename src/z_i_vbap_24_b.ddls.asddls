@@ -7,6 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #COMPOSITE
 define view entity Z_I_VBAP_24_B
   as select from Z_I_VBAP_24_A
   association to parent Z_I_VBAK_24_B as _SHead on $projection.SalesDocument = _SHead.SalesDocument

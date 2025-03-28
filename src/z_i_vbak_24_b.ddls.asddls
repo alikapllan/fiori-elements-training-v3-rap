@@ -7,6 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #COMPOSITE
 define root view entity Z_I_VBAK_24_B
   as select from Z_I_VBAK_24_A
   composition [0..*] of Z_I_VBAP_24_B as _SItem

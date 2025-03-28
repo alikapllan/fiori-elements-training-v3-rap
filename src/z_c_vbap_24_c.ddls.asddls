@@ -7,6 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #CONSUMPTION
 define view entity Z_C_VBAP_24_C 
     as projection on Z_I_VBAP_24_B
 {
