@@ -22,4 +22,7 @@ annotate entity Z_C_VBAK_24_C
     
     @UI:{ lineItem: [{ position: 60, label: 'Created By' }] }
     CreatedBy;
+    
+    @UI:{ lineItem: [{ position: 70, label: 'Status', criticality: 'criticality' }] } // pointing criticality field from CDS -> color + text of criticalityState
+    criticalityState;
 }
