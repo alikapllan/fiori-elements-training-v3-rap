@@ -61,7 +61,11 @@ annotate entity Z_C_VBAK_24_C
     
     @UI:{ identification: [{ position: 30, qualifier: 'identificationRef', label: 'Total' }],
           lineItem: [{ position: 40, label: 'Total' }],
-          fieldGroup: [{ position: 40, qualifier: 'technicalDetails2', label: 'Total' }] }
+          fieldGroup: [{ position: 40, qualifier: 'technicalDetails2', label: 'Total' }],
+          // displaying next to header info 
+          dataPoint: { title: 'Total', qualifier: 'NetValue', criticality: 'criticality' }, // pointing criticality field from CDS -> Total Value in color
+          facet: [{ type: #DATAPOINT_REFERENCE, purpose: #HEADER, targetQualifier: 'NetValue' }]
+           }
     NetValue;
     
     @UI:{ lineItem: [{ position: 50, label: 'Currency' }],
@@ -69,7 +73,9 @@ annotate entity Z_C_VBAK_24_C
     Currency;
     
     @UI:{ lineItem: [{ position: 60, label: 'Created By' }],
-          fieldGroup: [{ position: 50, qualifier: 'technicalDetails2', label: 'Created By' }] }
+          fieldGroup: [{ position: 50, qualifier: 'technicalDetails2', label: 'Created By' }],
+          dataPoint: { title: 'Created By', qualifier: 'CreatedBy', criticality: 'criticality' }, 
+          facet: [{ type: #DATAPOINT_REFERENCE, purpose: #HEADER, targetQualifier: 'CreatedBy' }] }
     CreatedBy;
     
     @UI:{ lineItem: [{ position: 70, label: 'Status', criticality: 'criticality' }] } // pointing criticality field from CDS -> color + text of criticalityState
