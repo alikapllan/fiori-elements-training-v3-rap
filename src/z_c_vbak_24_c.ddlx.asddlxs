@@ -1,0 +1,23 @@
+@Metadata.layer: #CUSTOMER
+annotate entity Z_C_VBAK_24_C
+    with 
+{
+    @UI:{ lineItem: [{ position: 10, label: 'Sales Order' }] }
+    SalesDocument;
+    
+    @UI:{ lineItem: [{ position: 20, label: 'Sales Organization' }] }
+    SalesOrganization;
+    
+    @UI:{ lineItem: [{ position: 30, label: 'Sales Distribution' }] }
+    SalesDist;
+    
+    @UI:{ lineItem: [{ position: 40, label: 'Total' }] }
+    NetValue;
+    
+    @UI:{ lineItem: [{ position: 50, label: 'Currency' }],
+          hidden: true }
+    Currency;
+    
+    @UI:{ lineItem: [{ position: 60, label: 'Created By' }] }
+    CreatedBy;
+}

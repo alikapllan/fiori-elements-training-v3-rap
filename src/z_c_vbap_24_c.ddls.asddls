@@ -2,6 +2,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Projection View - ZVBAP_24'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,

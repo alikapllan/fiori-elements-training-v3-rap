@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - ZVBAK_24 &  ZVBAP_24 - O2'
+define service ZUI_VBAK_VBAP_24_O2 {
+  expose Z_C_VBAK_24_C;
+}
