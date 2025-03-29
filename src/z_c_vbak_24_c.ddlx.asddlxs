@@ -16,31 +16,39 @@ annotate entity Z_C_VBAK_24_C
     @UI.facet: [{ type: #FIELDGROUP_REFERENCE,
                   position: 10,
                   targetQualifier: 'overviewDetails',
-                  label: 'Overview Info' }]
+                  label: 'Overview Info' },
+                  
+                { type: #FIELDGROUP_REFERENCE,
+                  position: 20,
+                  targetQualifier: 'technicalDetails',
+                  label: 'Technical Details' }]
 
     @UI:{ lineItem: [{ position: 10, label: 'Sales Order' }],
           selectionField: [{ position: 10 }],
-          fieldGroup: [{ position: 10, qualifier: 'overviewDetails', label: 'SD Document' }] }
+          fieldGroup: [{ position: 10, qualifier: 'overviewDetails', label: 'SD Document' },
+                       { position: 10, qualifier: 'technicalDetails', label: 'SD Document' }] }
     SalesDocument;
     
     @UI:{ lineItem: [{ position: 20, label: 'Sales Organization' }],
           selectionField: [{ position: 20 }],
-          fieldGroup: [{ position: 20, qualifier: 'overviewDetails', label: 'Sales Org' }] }
+          fieldGroup: [{ position: 20, qualifier: 'overviewDetails', label: 'Sales Org' },
+                       { position: 20, qualifier: 'technicalDetails', label: 'Sales Org' }] }
     SalesOrganization;
     
     @UI:{ lineItem: [{ position: 30, label: 'Sales Distribution' }],
-          fieldGroup: [{ position: 30, qualifier: 'overviewDetails', label: 'Sales Dist' }] }
+          fieldGroup: [{ position: 30, qualifier: 'technicalDetails', label: 'Sales Dist' }] }
     SalesDist;
     
     @UI:{ lineItem: [{ position: 40, label: 'Total' }],
-          fieldGroup: [{ position: 40, qualifier: 'overviewDetails', label: 'Total' }] }
+          fieldGroup: [{ position: 40, qualifier: 'technicalDetails', label: 'Total' }] }
     NetValue;
     
     @UI:{ lineItem: [{ position: 50, label: 'Currency' }],
           hidden: true }
     Currency;
     
-    @UI:{ lineItem: [{ position: 60, label: 'Created By' }] }
+    @UI:{ lineItem: [{ position: 60, label: 'Created By' }],
+          fieldGroup: [{ position: 50, qualifier: 'technicalDetails', label: 'Created By' }] }
     CreatedBy;
     
     @UI:{ lineItem: [{ position: 70, label: 'Status', criticality: 'criticality' }] } // pointing criticality field from CDS -> color + text of criticalityState
