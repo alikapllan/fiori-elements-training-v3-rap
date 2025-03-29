@@ -10,7 +10,12 @@ annotate entity Z_C_VBAP_24_C
                 { type: #FIELDGROUP_REFERENCE,
                   position: 10,
                   targetQualifier: 'overviewDetails',
-                  label: 'Overview' }]
+                  label: 'Overview' },
+                // for Rating
+                { type: #DATAPOINT_REFERENCE,
+                  purpose: #HEADER,
+                  targetQualifier: 'rating',
+                  label: 'Rating' }]
 
     @UI: { lineItem: [{ position: 10, label: 'Item Position' }],
            fieldGroup: [{ position: 10, qualifier: 'headerDetails', label: 'Item Position' },
@@ -37,4 +42,10 @@ annotate entity Z_C_VBAP_24_C
     @UI: { lineItem: [{ position: 60, label: 'Total' }],
            fieldGroup: [{ position: 60, qualifier: 'overviewDetails', label: 'Total' }] }
     total;
+    
+    @UI: { fieldGroup: [{ position: 70, qualifier: 'overviewDetails', label: 'Rating' }],
+           dataPoint: { title: 'Rating', 
+                        targetValueElement: 'maxRating',
+                        visualization: #RATING } }
+    rating;
 }
