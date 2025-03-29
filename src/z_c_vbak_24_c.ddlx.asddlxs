@@ -39,7 +39,12 @@ annotate entity Z_C_VBAK_24_C
                   type: #FIELDGROUP_REFERENCE,
                   position: 20,
                   targetQualifier: 'technicalDetails2',
-                  label: 'Technical Details 2' }]
+                  label: 'Technical Details 2' },
+                  
+                { type: #LINEITEM_REFERENCE,
+                  position: 30, // after COLLECTION
+                  targetElement: '_SItem',
+                  label: 'Items' }]
 
     @UI:{ identification: [{ position: 10, qualifier: 'identificationRef', label: 'SD Document' }],
           lineItem: [{ position: 10, label: 'Sales Order' }],

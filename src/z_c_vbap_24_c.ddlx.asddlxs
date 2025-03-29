@@ -1,0 +1,16 @@
+@Metadata.layer: #CUSTOMER
+annotate entity Z_C_VBAP_24_C
+    with 
+{
+    @UI: { lineItem: [{ position: 10, label: 'Item Position' }] }
+    itemPos;
+    
+    @UI: { lineItem: [{ position: 20, label: 'Material Number' }] }
+    matNum;
+    
+    @UI: { lineItem: [{ position: 30, label: 'Unit Cost' }] }
+    unitCost;
+    
+    @UI: { lineItem: [{ position: 40, label: 'Quantity' }] }
+    quantity;
+}
