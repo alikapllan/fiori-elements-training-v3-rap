@@ -18,29 +18,42 @@ annotate entity Z_C_VBAK_24_C
                   targetQualifier: 'overviewDetails',
                   label: 'Overview Info' },
                   
-                { type: #FIELDGROUP_REFERENCE,
+                { id: 'collectionID',
+                  type: #COLLECTION,
                   position: 20,
-                  targetQualifier: 'technicalDetails',
-                  label: 'Technical Details' }]
+                  targetQualifier: 'collectionGroup',
+                  label: 'Collection' },
+                  
+                { parentId: 'collectionID',
+                  type: #FIELDGROUP_REFERENCE,
+                  position: 10, // as grouped under COLLECTION, now field groups, assigned to COLLECTION, can be ranked among themselves 
+                  targetQualifier: 'technicalDetails1',
+                  label: 'Technical Details 1' },
+                  
+                { parentId: 'collectionID',
+                  type: #FIELDGROUP_REFERENCE,
+                  position: 20,
+                  targetQualifier: 'technicalDetails2',
+                  label: 'Technical Details 2' }]
 
     @UI:{ lineItem: [{ position: 10, label: 'Sales Order' }],
           selectionField: [{ position: 10 }],
           fieldGroup: [{ position: 10, qualifier: 'overviewDetails', label: 'SD Document' },
-                       { position: 10, qualifier: 'technicalDetails', label: 'SD Document' }] }
+                       { position: 10, qualifier: 'technicalDetails1', label: 'SD Document' }] }
     SalesDocument;
     
     @UI:{ lineItem: [{ position: 20, label: 'Sales Organization' }],
           selectionField: [{ position: 20 }],
           fieldGroup: [{ position: 20, qualifier: 'overviewDetails', label: 'Sales Org' },
-                       { position: 20, qualifier: 'technicalDetails', label: 'Sales Org' }] }
+                       { position: 20, qualifier: 'technicalDetails1', label: 'Sales Org' }] }
     SalesOrganization;
     
     @UI:{ lineItem: [{ position: 30, label: 'Sales Distribution' }],
-          fieldGroup: [{ position: 30, qualifier: 'technicalDetails', label: 'Sales Dist' }] }
+          fieldGroup: [{ position: 30, qualifier: 'technicalDetails1', label: 'Sales Dist' }] }
     SalesDist;
     
     @UI:{ lineItem: [{ position: 40, label: 'Total' }],
-          fieldGroup: [{ position: 40, qualifier: 'technicalDetails', label: 'Total' }] }
+          fieldGroup: [{ position: 40, qualifier: 'technicalDetails2', label: 'Total' }] }
     NetValue;
     
     @UI:{ lineItem: [{ position: 50, label: 'Currency' }],
@@ -48,7 +61,7 @@ annotate entity Z_C_VBAK_24_C
     Currency;
     
     @UI:{ lineItem: [{ position: 60, label: 'Created By' }],
-          fieldGroup: [{ position: 50, qualifier: 'technicalDetails', label: 'Created By' }] }
+          fieldGroup: [{ position: 50, qualifier: 'technicalDetails2', label: 'Created By' }] }
     CreatedBy;
     
     @UI:{ lineItem: [{ position: 70, label: 'Status', criticality: 'criticality' }] } // pointing criticality field from CDS -> color + text of criticalityState
