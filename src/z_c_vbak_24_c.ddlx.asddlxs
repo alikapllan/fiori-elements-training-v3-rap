@@ -1,19 +1,39 @@
 @Metadata.layer: #CUSTOMER
+
+@UI: { 
+    headerInfo: { 
+        typeImageUrl: 'https://i.ibb.co/WWfNSgp/openui5.png',
+        title: { value: 'SalesDocument' },
+        description: { value: 'SalesOrganization' },
+        typeName: 'Sales Order',
+        typeNamePlural: 'Sales Orders'
+    }
+}
+
 annotate entity Z_C_VBAK_24_C
     with 
 {
+    @UI.facet: [{ type: #FIELDGROUP_REFERENCE,
+                  position: 10,
+                  targetQualifier: 'overviewDetails',
+                  label: 'Overview Info' }]
+
     @UI:{ lineItem: [{ position: 10, label: 'Sales Order' }],
-          selectionField: [{ position: 10 }] }
+          selectionField: [{ position: 10 }],
+          fieldGroup: [{ position: 10, qualifier: 'overviewDetails', label: 'SD Document' }] }
     SalesDocument;
     
     @UI:{ lineItem: [{ position: 20, label: 'Sales Organization' }],
-          selectionField: [{ position: 20 }] }
+          selectionField: [{ position: 20 }],
+          fieldGroup: [{ position: 20, qualifier: 'overviewDetails', label: 'Sales Org' }] }
     SalesOrganization;
     
-    @UI:{ lineItem: [{ position: 30, label: 'Sales Distribution' }] }
+    @UI:{ lineItem: [{ position: 30, label: 'Sales Distribution' }],
+          fieldGroup: [{ position: 30, qualifier: 'overviewDetails', label: 'Sales Dist' }] }
     SalesDist;
     
-    @UI:{ lineItem: [{ position: 40, label: 'Total' }] }
+    @UI:{ lineItem: [{ position: 40, label: 'Total' }],
+          fieldGroup: [{ position: 40, qualifier: 'overviewDetails', label: 'Total' }] }
     NetValue;
     
     @UI:{ lineItem: [{ position: 50, label: 'Currency' }],

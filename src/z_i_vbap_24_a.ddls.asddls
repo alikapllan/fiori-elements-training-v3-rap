@@ -13,7 +13,7 @@ define view entity Z_I_VBAP_24_A
   association [1..1] to Z_I_VBAK_24_A as _SD_Head on $projection.SalesDocument = _SD_Head.SalesDocument
 {
 
-      @ObjectModel.foreignKey.association: '_SD_Head_03'
+      @ObjectModel.foreignKey.association: '_SD_Head'
   key vbeln                                                                             as SalesDocument,
 
   key posnr                                                                             as itemPos,
