@@ -2,15 +2,39 @@
 annotate entity Z_C_VBAP_24_C
     with 
 {
-    @UI: { lineItem: [{ position: 10, label: 'Item Position' }] }
+    @UI.facet: [{ type: #FIELDGROUP_REFERENCE,
+                  targetQualifier: 'headerDetails',
+                  purpose: #HEADER,
+                  label: 'Header Info for Item' },
+                  
+                { type: #FIELDGROUP_REFERENCE,
+                  position: 10,
+                  targetQualifier: 'overviewDetails',
+                  label: 'Overview' }]
+
+    @UI: { lineItem: [{ position: 10, label: 'Item Position' }],
+           fieldGroup: [{ position: 10, qualifier: 'headerDetails', label: 'Item Position' },
+                        { position: 10, qualifier: 'overviewDetails', label: 'Item Position' }] }
     itemPos;
     
-    @UI: { lineItem: [{ position: 20, label: 'Material Number' }] }
+    @UI: { lineItem: [{ position: 20, label: 'Material Number' }],
+           fieldGroup: [{ position: 20, qualifier: 'headerDetails', label: 'Material Number' },
+                        { position: 20, qualifier: 'overviewDetails', label: 'Item Position' }] }
     matNum;
     
-    @UI: { lineItem: [{ position: 30, label: 'Unit Cost' }] }
+    @UI: { lineItem: [{ position: 30, label: 'Material Description' }],
+           fieldGroup: [{ position: 30, qualifier: 'overviewDetails', label: 'Material Description' }] }
+    matDesc;
+    
+    @UI: { lineItem: [{ position: 40, label: 'Unit Cost' }],
+           fieldGroup: [{ position: 40, qualifier: 'overviewDetails', label: 'Unit Cost' }] }
     unitCost;
     
-    @UI: { lineItem: [{ position: 40, label: 'Quantity' }] }
+    @UI: { lineItem: [{ position: 50, label: 'Quantity' }],
+           fieldGroup: [{ position: 50, qualifier: 'overviewDetails', label: 'Quantity' }] }
     quantity;
+    
+    @UI: { lineItem: [{ position: 60, label: 'Total' }],
+           fieldGroup: [{ position: 60, qualifier: 'overviewDetails', label: 'Total' }] }
+    total;
 }
