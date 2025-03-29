@@ -10,10 +10,10 @@
 @VDM.viewType: #BASIC
 define view entity Z_I_VBAP_24_A
   as select from zvbap_24
-  association [1..1] to Z_I_VBAK_24_A as _SD_Head on $projection.SalesDocument = _SD_Head.SalesDocument
+  association [1..1] to Z_I_VBAK_24_A as _SHead on $projection.SalesDocument = _SHead.SalesDocument
 {
 
-      @ObjectModel.foreignKey.association: '_SD_Head'
+      @ObjectModel.foreignKey.association: '_SHead'
   key vbeln                                                                             as SalesDocument,
 
   key posnr                                                                             as itemPos,
@@ -35,20 +35,20 @@ define view entity Z_I_VBAP_24_A
       
       kmein                                                                             as unit,
 
-      _SD_Head.CreatedBy                                                                as createdBy,
+      _SHead.CreatedBy                                                                as createdBy,
 
-      _SD_Head.SalesOrganization                                                        as salesOrg,
+      _SHead.SalesOrganization                                                        as salesOrg,
 
-      concat(concat(_SD_Head.SalesDocument,'/org/'), _SD_Head.SalesOrganization ) as urlOrg,
+      concat(concat(_SHead.SalesDocument,'/org/'), _SHead.SalesOrganization ) as urlOrg,
 
       4.2                                                                               as rating,
       5                                                                                 as maxRating,
       
       @Semantics.amount.currencyCode:'currencyCode'
-      _SD_Head.NetValue                                                                 as total,
+      _SHead.NetValue                                                                 as total,
 
       concat('Detail ',posnr)                                                           as salesDocNavLink,
 
       // Associations
-      _SD_Head
+      _SHead
 }

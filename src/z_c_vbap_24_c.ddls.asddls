@@ -12,6 +12,7 @@
 define view entity Z_C_VBAP_24_C 
     as projection on Z_I_VBAP_24_B
 {
+    @ObjectModel.foreignKey.association: '_SHead'
     key SalesDocument,
     key itemPos,
     @Semantics.amount.currencyCode:'currencyCode'

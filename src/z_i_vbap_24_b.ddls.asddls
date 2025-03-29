@@ -12,7 +12,8 @@ define view entity Z_I_VBAP_24_B
   as select from Z_I_VBAP_24_A
   association to parent Z_I_VBAK_24_B as _SHead on $projection.SalesDocument = _SHead.SalesDocument
 {
-      @ObjectModel.foreignKey.association: '_SHead'
+      @ObjectModel.foreignKey.association: '_SHead' // attention only -> important for quick view
+                                                    // so that quick view of linked Sales Document on Sales Item level can be shown
   key SalesDocument,
 
   key itemPos,

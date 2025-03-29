@@ -48,4 +48,8 @@ annotate entity Z_C_VBAP_24_C
                         targetValueElement: 'maxRating',
                         visualization: #RATING } }
     rating;
+    
+    @UI: { lineItem: [{ position: 80, label: 'Sales Document Number' }],
+           fieldGroup: [{ position: 10, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
+    SalesDocument;
 }
