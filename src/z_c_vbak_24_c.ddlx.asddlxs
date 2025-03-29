@@ -2,10 +2,12 @@
 annotate entity Z_C_VBAK_24_C
     with 
 {
-    @UI:{ lineItem: [{ position: 10, label: 'Sales Order' }] }
+    @UI:{ lineItem: [{ position: 10, label: 'Sales Order' }],
+          selectionField: [{ position: 10 }] }
     SalesDocument;
     
-    @UI:{ lineItem: [{ position: 20, label: 'Sales Organization' }] }
+    @UI:{ lineItem: [{ position: 20, label: 'Sales Organization' }],
+          selectionField: [{ position: 20 }] }
     SalesOrganization;
     
     @UI:{ lineItem: [{ position: 30, label: 'Sales Distribution' }] }
