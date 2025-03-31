@@ -57,4 +57,8 @@ annotate entity Z_C_VBAP_24_C
                         type: #WITH_URL, url: 'urlOrg' }],
            fieldGroup: [{ position: 90, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
     total;
+    
+    @UI: { lineItem: [{ position: 100, label: 'Navigation',
+                         type: #WITH_NAVIGATION_PATH, targetElement: '_SHead'  }] }
+    salesDocNavLink;
 }
