@@ -39,9 +39,9 @@ annotate entity Z_C_VBAP_24_C
            fieldGroup: [{ position: 50, qualifier: 'overviewDetails', label: 'Quantity' }] }
     quantity;
     
-    @UI: { lineItem: [{ position: 60, label: 'Total' }],
-           fieldGroup: [{ position: 60, qualifier: 'overviewDetails', label: 'Total' }] }
-    total;
+//    @UI: { lineItem: [{ position: 60, label: 'Total' }],
+//           fieldGroup: [{ position: 60, qualifier: 'overviewDetails', label: 'Total' }] }
+//    total;
     
     @UI: { fieldGroup: [{ position: 70, qualifier: 'overviewDetails', label: 'Rating' }],
            dataPoint: { title: 'Rating', 
@@ -50,6 +50,11 @@ annotate entity Z_C_VBAP_24_C
     rating;
     
     @UI: { lineItem: [{ position: 80, label: 'Sales Document Number' }],
-           fieldGroup: [{ position: 10, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
+           fieldGroup: [{ position: 70, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
     SalesDocument;
+    
+    @UI: { lineItem: [{ position: 90, label: 'Total',
+                        type: #WITH_URL, url: 'urlOrg' }],
+           fieldGroup: [{ position: 80, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
+    total;
 }
