@@ -50,11 +50,11 @@ annotate entity Z_C_VBAP_24_C
     rating;
     
     @UI: { lineItem: [{ position: 80, label: 'Sales Document Number' }],
-           fieldGroup: [{ position: 70, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
+           fieldGroup: [{ position: 80, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
     SalesDocument;
     
     @UI: { lineItem: [{ position: 90, label: 'Total',
                         type: #WITH_URL, url: 'urlOrg' }],
-           fieldGroup: [{ position: 80, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
+           fieldGroup: [{ position: 90, qualifier: 'overviewDetails', label: 'Sales Document Number' }] }
     total;
 }

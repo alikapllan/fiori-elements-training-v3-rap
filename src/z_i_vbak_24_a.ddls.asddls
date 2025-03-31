@@ -10,7 +10,7 @@
 @VDM.viewType: #BASIC
 define view entity Z_I_VBAK_24_A
   as select from zvbak_24
-  association [0..*] to Z_I_VBAP_24_A as _SD_Item on $projection.SalesDocument = _SD_Item.SalesDocument
+  association [0..*] to Z_I_VBAP_24_A as _SItem on $projection.SalesDocument = _SItem.SalesDocument
 {
   key vbeln                  as SalesDocument,
       vkorg                  as SalesOrganization,
@@ -31,5 +31,5 @@ define view entity Z_I_VBAK_24_A
       'ABC MNQ Pin: 12345' as address,
 
       // Associations
-      _SD_Item
+      _SItem
 }
